@@ -1,0 +1,53 @@
+<router-outlet></router-outlet>
+<nav class="sticky-top navbar-expand-lg  navbar navbar-light bg-dark">
+  <label class="navbar-brand letreiro">Restaurante X </label>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <form class="form-group col-sm-4 offset-sm-3 col-md-4 offset-md-3 col-lg-4 offset-lg-3 letreiro_form">
+      <input name="busca" [(ngModel)]="busca" class="form-control mr-sm-2" type="text" placeholder="Busque pelo: sabor">
+    </form>
+  </div>
+  <img src="https://spacegrant.arizona.edu/sites/spacegrant.arizona.edu/files/about/logos/nic_print3600x2993ppi.png" style="width: 5%; height: 5%;"
+    class="img-fluid letreiro_logo" alt="Responsive image">
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 offset-sm-2 col-md-8 offset-md-2 col-lg-8 offset-lg-2">
+      <table class="table">
+        <tbody>
+          <tr *ngFor="let produto of produtos | filter : busca | orderBy : order">
+            <td>
+              <button type="button" class="btn btn-primary btn-sm botao_detalhes" data-toggle="modal" [attr.data-target]="'#' + produto.id">
+                +
+              </button>
+              <label class="modal_titulo">{{produto.name}}</label>
+            </td>
+            <td>R$ {{produto.preco | number:'2.2' }}</td>
+            <!-- Modal -->
+            <div class="modal fade" id="{{produto.id}}" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="text-center">{{produto.name}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Ingredientes:
+                    <ul>
+                      <li *ngFor="let ingrediente of produto.ingredientes">{{ingrediente}}</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

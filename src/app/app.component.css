@@ -1,0 +1,24 @@
+.letreiro{
+    color: white;
+}
+.letreiro_form{
+    padding-top: 1%;
+}
+
+.letreiro_logo{
+    margin-right: 2%;
+}
+
+.modal_titulo{
+    text-align: center;
+}
+
+.botao_detalhes{
+    margin-right: 2%;
+}
+
+@media screen and (max-width: 992px) {
+    .letreiro_logo{
+        display: none;
+    }
+  }
