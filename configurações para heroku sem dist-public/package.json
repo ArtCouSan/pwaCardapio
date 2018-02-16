@@ -1,0 +1,30 @@
+{
+  "name": "pwacardapio",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "app.js",
+  "dependencies": {
+    "@angular/animations": "^5.2.0",
+    "@angular/common": "^5.2.0",
+    "@angular/compiler": "^5.2.0",
+    "@angular/compiler-cli": "^4.4.6",
+    "@angular/cli": "1.4.9",
+    "@angular/core": "^5.2.0",
+    "@angular/forms": "^5.2.0",
+    "@angular/http": "^5.2.0",
+    "@angular/platform-browser": "^5.2.0",
+    "@angular/platform-browser-dynamic": "^5.2.0",
+    "@angular/router": "^5.2.0",
+    "@angular/service-worker": "^5.2.0",
+    "bootstrap": "^4.0.0",
+    "core-js": "^2.4.1",
+    "express": "^4.16.2",
+    "jquery": "^3.3.1",
+    "ngx-order-pipe": "^1.2.1",
+    "rxjs": "^5.5.6",
+    "zone.js": "^0.8.19"
+  },
+  "engines": {
+    "node": "8.9.3"
+  }
+}
